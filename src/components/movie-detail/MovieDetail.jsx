@@ -14,8 +14,10 @@ export const MovieDetail = () => {
                     <p className="movie-synopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis magni officia tempora laudantium! Soluta dolorem ab debitis quaerat totam nemo officia quasi. Quibusdam cum mollitia consequuntur cupiditate aliquid accusantium aut.</p>
                 </div>
                 <div className="movie-data-meta">
-                    <p className="movie-category">Adventure, Drama, Ficture</p>
-                    <p className="movie-producers">Legendary Pictures</p>
+                    <div className='movie-meta-data'>
+                        <p className="movie-category">Adventure, Drama, Ficture</p>
+                        <p className="movie-producers">Legendary Pictures</p>
+                    </div>
                     <div className="movie-meta">
                         <h4 className='movie-meta-key'>Original Release:</h4>
                         <p className="movie-meta-value">2014-11-05</p>

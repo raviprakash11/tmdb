@@ -8,7 +8,7 @@ export const Home = () => {
 
     return (
         <div className="home">
-            <BackgroundImage content={content} />
+            <BackgroundImage bgImage={'https://source.unsplash.com/random'} content={content} />
         </div>
     )
 }

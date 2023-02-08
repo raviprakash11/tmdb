@@ -1,4 +1,5 @@
 import React from 'react';
+import "./BackgroundImage.css";
 
 export const BackgroundImage = ({ content, bgImage }) => {
     const bgStyle = {};
