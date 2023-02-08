@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-block: 16px;
+}
+.app-logo {
+    display: inline-block;
+    width: 150px;
+}
+.nav {
+    margin: 0;
+    flex: 0 0 55%;
+}
