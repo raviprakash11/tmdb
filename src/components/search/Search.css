@@ -11,9 +11,13 @@
     left: 0;
     right: 0;
     color: #fff;
+    border: 1px solid #dbdbdb;
+    max-height: 180px;
+    overflow-y: auto;
 }
 .search-suggestion > li {
     padding: 5px 10px;
+    cursor: pointer;
 }
 .search-suggestion > li + li {
     border-top: 1px solid #dbdbdb;

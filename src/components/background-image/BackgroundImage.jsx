@@ -4,7 +4,7 @@ import "./BackgroundImage.css";
 export const BackgroundImage = ({ content, bgImage }) => {
     const bgStyle = {};
     if(bgImage) {
-        bgStyle['background-image'] = `url(${bgImage})`;
+        bgStyle['backgroundImage'] = `url(${bgImage})`;
     }
 
     return (
