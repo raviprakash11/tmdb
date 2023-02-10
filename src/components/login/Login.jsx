@@ -1,35 +1,15 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { login } from "../../services/auth.service";
-import { authActions } from "../../app/auth/auth.slice";
+import { loginUser } from "../../app/auth/auth.slice";
+import { withAuthHandlers } from '../../hoc/auth.hoc';
 
-export const Login = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const [user, setUser] = React.useState({ email: '', password: ''});
-
-    const handleOnChange = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value });
-    }
-
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try {
-            const data = await login(user);
-            localStorage.setItem('accessToken', data.accessToken);
-            dispatch(authActions.setAuthData(data));
-            navigate('/dashboard');
-        } catch (error) {
-            console.error(`[Login::handleLogin::login] Error:: `, error);
-        }
-    }
+export const LoginComponent = ({ handleFormSubmit, handleOnChange }) => {
 
     return (
         <div className="auth login">
-            <h2>Welcome back TMDB <br /> Login to your account</h2>
-            <form className="auth-form" onSubmit={handleLogin}>
+            <h2>Welcome back to TMDB <br /> Login to your account</h2>
+            <form className="auth-form" onSubmit={handleFormSubmit}>
                 <div className="form-group"><label htmlFor="" className="form-label">Username</label><input type="email" className="form-control" placeholder="Your email id" name="email" onChange={handleOnChange} /></div>
                 <div className="form-group"><label htmlFor="" className="form-label">Password</label><input type="password" className="form-control" placeholder="Set secure password" name="password" onChange={handleOnChange} /></div>
                 <div className="form-group">
@@ -42,3 +22,5 @@ export const Login = () => {
         </div>
     )
 }
+
+export const Login = withAuthHandlers(LoginComponent, { email: '', password: '' }, loginUser);

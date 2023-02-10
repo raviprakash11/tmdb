@@ -11,6 +11,18 @@
       "password": "$2a$10$N7lHvh67wtNzxtxzQTBeOON9eZaAdY1ltzM7SHQohhWRXOfaJzt2K",
       "name": "Jane Doe",
       "id": 2
+    },
+    {
+      "email": "jonahdoe@mailinator.com",
+      "password": "$2a$10$btuMJHoyhhVTcE1crqeKu.V.FXYE2CPVTU6Y85LHInLNXwU5FZ/uq",
+      "name": "Jonah Doe",
+      "id": 3
+    },
+    {
+      "email": "ramesh.gupta@mailinator.com",
+      "password": "$2a$10$NmO9KsP7UR2XuaOHpSqbUOfgxTFnpB8QxkgSWufOfhZnFHY4ep07m",
+      "name": "Ramesh Gupta",
+      "id": 4
     }
   ]
 }
