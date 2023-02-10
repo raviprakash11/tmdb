@@ -1,3 +1,16 @@
 {
-    "users": []
+  "users": [
+    {
+      "email": "johndoe@mailinator.com",
+      "password": "$2a$10$HDwGso9Uw7BgH5Jztu5ovehQOYtdGLSHW.T3M4Q/yxnDvzX3E3Vey",
+      "name": "John Doe",
+      "id": 1
+    },
+    {
+      "email": "janedoe@mailinator.com",
+      "password": "$2a$10$N7lHvh67wtNzxtxzQTBeOON9eZaAdY1ltzM7SHQohhWRXOfaJzt2K",
+      "name": "Jane Doe",
+      "id": 2
+    }
+  ]
 }

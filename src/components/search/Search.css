@@ -1,5 +1,6 @@
 .search-field {
     position: relative;
+    flex: 1 auto;
 }
 .search-suggestion {
     position: absolute;
