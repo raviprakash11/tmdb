@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Sofia+Sans+Extra+Condensed:wght@300;500&display=swap');
 
+html, body {
+  font-size: 14px;
+}
+
 body {
   margin: 0;
   font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -42,7 +46,61 @@ input:focus {
   border-bottom-color: #eee;
 }
 
+input::placeholder {
+  color: #f8f8f8;
+}
+
+input::-moz-placeholder {
+  color: white;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+}
+
 .boxed {
   max-width: 60rem;
   margin-inline: auto;
+}
+
+.button {
+  text-decoration: none;
+  padding: 6px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  color: rgb(54, 235, 54);
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.auth {
+  max-width: 80%;
+  color: rgb(54, 235, 54);
+  margin-inline: auto;
+  padding: 3rem 2rem;
+}
+
+.auth-form {
+  color: white;
+  display: grid;
+  gap: 20px;
+}
+
+.auth > h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.75em;
+}
+
+@media screen and (min-width: 768px) {
+  html, body {
+    font-size: 16px;
+  }
+  .auth {
+    max-width: 60%;
+  }
 }
