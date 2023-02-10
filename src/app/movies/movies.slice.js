@@ -1,11 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { getMovieDetailById, searchMovies } from '../../services/movies.service';
+import { IMAGE_BASE_PATH } from '../../shared/constants';
+
 const initialState = {
     movies: [],
     movie: {},
     isLoading: false,
     error: null,
 }
+
+// const actionObject = { type: 'movies/fetchMovieStart', payload: [] }
+// // dispatch(actionObject)
+// const actionCreator = (params) => ({ ...actionObject, payload: params });
+// // dispatch(actionCreator())
+
+// const thunkFunction = async (dispatch, getState) => { dispatch(); }
+// // dispatch(thunkFunction)
+// const thunkFunctionCreator = (params) => { 
+//     const a = 10;
+//     let b = 20;
+//     return async (dispatch, getState) => {
+//         const retAbc = abc(); // 10
+//         const retXyz = xyz(); // 20
+//         const retPQR = pqr(); // 25
+
+//         const [retA, retX, retP] = Promise.all([retAbc, retXyz, retPQR]);
+//     }
+// }
+// // dispatch(thunkFunctionCreator())
 
 const moviesSlice = createSlice({
     name: 'movies',
@@ -45,3 +68,25 @@ const moviesSlice = createSlice({
 
 export const moviesReduers = moviesSlice.reducer;
 export const moviesActions = moviesSlice.actions;
+
+export const fetchMovieDetailById = (movieId, reset = false) => async (dispatch) => {
+    dispatch(moviesActions.fetchMovieStart())
+    try {
+        const data = await getMovieDetailById(movieId);
+        data.poster_path = `${IMAGE_BASE_PATH}${data.poster_path}`;
+        dispatch(moviesActions.fetchMovieSuccess({ movie: data }))
+        if(reset) dispatch(moviesActions.resetMovies());
+    } catch (error) {
+        dispatch(moviesActions.fetchMovieFailure({ error }))
+    }
+}
+
+export const findMovies = (value) => async (dispatch) => {
+    dispatch(moviesActions.fetchMoviesStart())
+    try {
+        const data = await searchMovies(value.trim());
+        dispatch(moviesActions.fetchMoviesSuccess({ movies: data.results }))
+    } catch (error) {
+        dispatch(moviesActions.fetchMoviesFailure({ error }));
+    }
+}

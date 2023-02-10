@@ -1,0 +1,1 @@
+export const IMAGE_BASE_PATH = 'https://images.tmdb.org/t/p/original'
