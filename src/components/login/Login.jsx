@@ -5,7 +5,6 @@ import { loginUser } from "../../app/auth/auth.slice";
 import { withAuthHandlers } from '../../hoc/auth.hoc';
 
 export const LoginComponent = ({ handleFormSubmit, handleOnChange }) => {
-
     return (
         <div className="auth login">
             <h2>Welcome back to TMDB <br /> Login to your account</h2>

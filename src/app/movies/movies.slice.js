@@ -10,26 +10,6 @@ const initialState = {
     error: null,
 }
 
-// const actionObject = { type: 'movies/fetchMovieStart', payload: [] }
-// // dispatch(actionObject)
-// const actionCreator = (params) => ({ ...actionObject, payload: params });
-// // dispatch(actionCreator())
-
-// const thunkFunction = async (dispatch, getState) => { dispatch(); }
-// // dispatch(thunkFunction)
-// const thunkFunctionCreator = (params) => { 
-//     const a = 10;
-//     let b = 20;
-//     return async (dispatch, getState) => {
-//         const retAbc = abc(); // 10
-//         const retXyz = xyz(); // 20
-//         const retPQR = pqr(); // 25
-
-//         const [retA, retX, retP] = Promise.all([retAbc, retXyz, retPQR]);
-//     }
-// }
-// // dispatch(thunkFunctionCreator())
-
 const moviesSlice = createSlice({
     name: 'movies',
     initialState: initialState,

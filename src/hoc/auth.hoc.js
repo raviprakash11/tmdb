@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export const withAuthHandlers = (Component, userObj, authAction) => {
+
     return () => {
         const [user, setUser] = React.useState(userObj)
         const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export const withAuthHandlers = (Component, userObj, authAction) => {
             setUser({ ...user, [e.target.name]: e.target.value });
         }
 
-        const handleFormSubmit = async (e) => {
+        const handleFormSubmit = (e) => {
             e.preventDefault();
             dispatch(authAction(user, navigate));
         }

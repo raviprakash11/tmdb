@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watch --coverage",
     "eject": "react-scripts eject",
     "server": "json-server-auth --watch db.json --port 4000"
   },
@@ -43,5 +43,8 @@
   "devDependencies": {
     "json-server": "^0.17.1",
     "json-server-auth": "^2.1.0"
+  },
+  "jest": {
+    "transformIgnorePatterns": ["node_modules/(?!(axios)/)"]
   }
 }
