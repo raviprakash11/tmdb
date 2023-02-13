@@ -1,11 +1,11 @@
 import React from 'react';
 import "./MovieDetail.css";
 
-export const MovieDetail = ({ movie }) => {
+export const MovieDetail = React.memo(({ movie }) => {
     return (
         <div className="movie-detail">
             <div className="movie-img">
-                <img src={movie.poster_path} alt="Movie image" />
+                <img src={movie.poster_path} alt="Movie poster" />
             </div>
             <div className="movie-data">
                 <div className="movie-data-main">
@@ -15,7 +15,7 @@ export const MovieDetail = ({ movie }) => {
                 </div>
                 <div className="movie-data-meta">
                     <div className='movie-meta-data'>
-                        <p className="movie-category">{movie.genres ? movie.genres.map(genre => genre.name).join(', ') : null}</p>
+                        <p className="movie-category">{movie.genres.map(genre => genre.name).join(', ')}</p>
                         <p className="movie-producers">{movie.production_companies ? movie.production_companies.map(com => com.name).join(', ') : null}</p>
                     </div>
                     <div className="movie-meta">
@@ -38,4 +38,4 @@ export const MovieDetail = ({ movie }) => {
             </div>
         </div>
     )
-}
+})

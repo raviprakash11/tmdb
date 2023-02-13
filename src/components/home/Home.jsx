@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchMovieDetailById } from '../../app/movies/movies.slice';
 import { MovieDetail } from '../movie-detail/MovieDetail';
+import { ErrorBoundary } from '../error-boudary/ErrorBoundary';
 import { BackgroundImage } from '../background-image/BackgroundImage';
 
 import { IMAGE_BASE_PATH } from '../../shared/constants';
@@ -15,7 +16,11 @@ export const Home = () => {
         dispatch(fetchMovieDetailById(157336));
     }, []);
 
-    const content = (<MovieDetail movie={moviesState.movie} />)
+    const content = (
+        <ErrorBoundary>
+            <MovieDetail movie={moviesState.movie} />
+        </ErrorBoundary>
+    )
 
     return (
         <div className="home">

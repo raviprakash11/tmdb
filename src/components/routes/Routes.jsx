@@ -1,9 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from '../home/Home';
-import { Register } from '../register/Register';
-import { Login } from '../login/Login';
-import { Dashboard } from '../user/dashboard/Dashboard';
+
+const Register = React.lazy(() => import('../register'));
+const Login = React.lazy(() => import('../login'));
+const Dashboard = React.lazy(() => import('../user/dashboard'));
 
 export const Router = () => {
     return (

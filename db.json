@@ -23,6 +23,12 @@
       "password": "$2a$10$NmO9KsP7UR2XuaOHpSqbUOfgxTFnpB8QxkgSWufOfhZnFHY4ep07m",
       "name": "Ramesh Gupta",
       "id": 4
+    },
+    {
+      "email": "suresh.verma@mailinator.com",
+      "password": "$2a$10$Bzxc0t.Fz0Lunp1W2h5gaeZKyGqrDmxUQDu0lmmuu/uxLBDbvuII.",
+      "name": "",
+      "id": 5
     }
   ]
 }
