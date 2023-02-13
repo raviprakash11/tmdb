@@ -1,7 +1,8 @@
 {
   "name": "tmdbengine",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://raviprakash11.github.io/tmdb",
+  "private": true, 
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.5",
@@ -20,7 +21,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watch --coverage",
     "eject": "react-scripts eject",
-    "server": "json-server-auth --watch db.json --port 4000"
+    "server": "json-server-auth --watch db.json --port 4000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,10 +44,13 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "json-server": "^0.17.1",
     "json-server-auth": "^2.1.0"
   },
   "jest": {
-    "transformIgnorePatterns": ["node_modules/(?!(axios)/)"]
+    "transformIgnorePatterns": [
+      "node_modules/(?!(axios)/)"
+    ]
   }
 }
