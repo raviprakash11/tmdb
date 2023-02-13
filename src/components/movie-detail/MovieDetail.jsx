@@ -15,7 +15,7 @@ export const MovieDetail = React.memo(({ movie }) => {
                 </div>
                 <div className="movie-data-meta">
                     <div className='movie-meta-data'>
-                        {Array.isArrry(movie.genres) && movie.genres.length ? (<p className="movie-category">{movie.genres.map(genre => genre.name).join(', ')}</p>) : null}
+                        {Array.isArray(movie.genres) && movie.genres.length ? (<p className="movie-category">{movie.genres.map(genre => genre.name).join(', ')}</p>) : null}
                         {Array.isArray(movie.production_companies) && movie.production_companies.length ? (<p className="movie-producers">{movie.production_companies.map(com => com.name).join(', ')}</p>) : null}
                     </div>
                     <div className="movie-meta">
